@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-600 p-4">
+        <div class="flex justify-between items-center max-w-screen-xl mx-auto">
+            <!-- Logo -->
+            <div class="text-white text-3xl font-bold">
+                Tailwind Movies
+            </div>
+
+            <!-- Search Input and Movie Button -->
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search movies..." class="px-4 py-2 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-72 search-title">
+                    <button class="absolute right-0 top-0 bottom-0 px-4 bg-indigo-600 text-white rounded-r-lg flex items-center justify-center">
+                        <i class="fas fa-search search"></i>
+                    </button>
+                </div>
+                
+                <!-- Add Movie Button -->
+                <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all" id="addMovieBtn">
+                    Add Movie
+                </button>
+
+                <!-- User Sign In Name -->
+                <div class="text-white text-lg">
+                    Hello, <span class="font-semibold show-name">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section (Movies List) -->
+    <main class="py-12">
+        <div class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 movie-div">
+            <!-- Movie Cards Will Go Here -->
+        </div>
+    </main>
+
+    <!-- Movie Form Modal (Initially Hidden) -->
+    <div id="movieFormModal" class="fixed inset-0 bg-gray-500 bg-opacity-50 z-50 hidden justify-center items-center add-movie">
+        <div class="bg-white p-6 rounded-lg w-1/3">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Add a New Movie</h2>
+            <form id="movieForm">
+                <div class="mb-4">
+                    <label for="movieTitle" class="block text-gray-700">Movie Title</label>
+                    <input type="text" id="movieTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Movie Title" required>
+                </div>
+                <div class="mb-4">
+                    <label for="movieGenre" class="block text-gray-700">Genre</label>
+                    <input type="text" id="movieGenre" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Genre" required>
+                </div>
+                <div class="mb-4">
+                    <label for="movieDescription" class="block text-gray-700">Description</label>
+                    <textarea id="movieDescription" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Movie Description" required></textarea>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="closeModalBtn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save Movie</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="movie.js"></script>
+</body>
+</html>
