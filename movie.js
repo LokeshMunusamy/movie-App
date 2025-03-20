@@ -98,7 +98,7 @@ function postAndSearch() {
     movieAjax.setRequestHeader('Content-Type', 'application/json'); 
     
     movieAjax.onload = function () {
-        if (movieAjax.status === 200) {
+        if (movieAjax.status === 200 || movieAjax.status === 201) {
             alert('Movie added successfully!');
             getMethod(); 
         }
@@ -108,8 +108,9 @@ function postAndSearch() {
 }
 
 document.getElementById('submit').addEventListener('click', function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
     postAndSearch();  
+    movieAddDiv.style.display = 'none'; 
 });
 
 searchTitleInput.addEventListener('keyup', function() {
