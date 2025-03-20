@@ -36,7 +36,7 @@
 
                 <!-- User Sign In Name -->
                 <div class="text-white text-lg">
-                    Hello, <span class="font-semibold show-name">John Doe</span>
+                    Hello, <span class="font-semibold show-name"></span>
                 </div>
             </div>
         </div>
@@ -49,30 +49,59 @@
         </div>
     </main>
 
-    <!-- Movie Form Modal (Initially Hidden) -->
-    <div id="movieFormModal" class="fixed inset-0 bg-gray-500 bg-opacity-50 z-50 hidden justify-center items-center add-movie">
-        <div class="bg-white p-6 rounded-lg w-1/3">
+    <div id="movieFormModal" class="fixed inset-0 bg-gray-500 bg-opacity-50 z-50 hidden flex justify-center items-center">
+        <div class="bg-white p-6 rounded-lg w-1/3 max-w-xl max-h-[90vh] overflow-y-auto mt-8 mx-auto">
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">Add a New Movie</h2>
             <form id="movieForm">
+                <!-- Movie Image -->
+                <div class="mb-4">
+                    <label for="movieImage" class="block text-gray-700">Image Path</label>
+                    <input type="text" id="movieImage" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Image Path" required>
+                </div>
+                <!-- Movie Title -->
                 <div class="mb-4">
                     <label for="movieTitle" class="block text-gray-700">Movie Title</label>
                     <input type="text" id="movieTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Movie Title" required>
                 </div>
+                <!-- Movie Genre -->
                 <div class="mb-4">
                     <label for="movieGenre" class="block text-gray-700">Genre</label>
                     <input type="text" id="movieGenre" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Genre" required>
                 </div>
+            
+                <!-- Movie Language -->
                 <div class="mb-4">
-                    <label for="movieDescription" class="block text-gray-700">Description</label>
-                    <textarea id="movieDescription" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Movie Description" required></textarea>
+                    <label for="movieLanguage" class="block text-gray-700">Language</label>
+                    <input type="text" id="movieLanguage" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Language" required>
                 </div>
+                <!-- Movie Release Date -->
+                <div class="mb-4">
+                    <label for="movieReleaseDate" class="block text-gray-700">Release Date</label>
+                    <input type="date" id="movieReleaseDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+                </div>
+                <!-- Movie Rating -->
+                <div class="mb-4">
+                    <label for="movieRating" class="block text-gray-700">Rating</label>
+                    <input type="number" id="movieRating" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Rating (1-10)" min="1" max="10" required>
+                </div>
+                <!-- Adult Content -->
+                <div class="mb-4">
+                    <label for="movieAdult" class="block text-gray-700">Adult Content</label>
+                    <select id="movieAdult" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <!-- Buttons -->
                 <div class="flex justify-end space-x-4">
                     <button type="button" id="closeModalBtn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save Movie</button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 " id='submit'>Save Movie</button>
                 </div>
             </form>
         </div>
     </div>
+    
+    
 
     <script src="movie.js"></script>
 </body>
